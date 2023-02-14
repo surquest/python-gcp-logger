@@ -108,7 +108,8 @@ class TestLogger:
 
     def test__debug(self):
 
-        entry = self.LOGGER.debug("This is a DEBUG message")
+        msg = "This is a DEBUG message"
+        entry = self.LOGGER.debug(msg)
 
         assert type(entry) == dict, \
             self.ERRORS.get("type").format(
@@ -120,6 +121,18 @@ class TestLogger:
             self.ERRORS.get("value").format(
                 "DEBUG",
                 entry.get("severity")
+            )
+
+        assert msg == entry.get("message"), \
+            self.ERRORS.get("value").format(
+                msg,
+                entry.get("message")
+            )
+
+        assert None == entry.get("context"), \
+            self.ERRORS.get("value").format(
+                None,
+                entry.get("context")
             )
 
     def test__warning(self):

@@ -82,12 +82,9 @@ class Logger(object):
 
         def temp_log(msg=None, **ctx):
 
-            if ctx is None:
-                return self.log(severity=severity, msg=msg)
-            else:
-                return self.log(
-                    severity=severity, msg=msg, **ctx
-                )
+            return self.log(
+                severity=severity, msg=msg, **ctx
+            )
 
         return temp_log
 
