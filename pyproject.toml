@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "surquest-GCP-logger"
+version = "0.0.1rc4"
+description = "Wrapper around Google Cloud Platform (GCP) logging library to simplify creation of traced logs."
+authors = [
+    {name= "Michal Švarc", email= "michal.svarc@surquest.com"}
+]
+readme = "README.md"
+dependencies = [
+    "surquest-GCP-tracer ~= 0.0.1"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.2.1",
+    "pytest-cov>=4.0.0",
+    "starlette ~= 0.20.0"
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/surquest/python-gcp-logger"
+"Bug Tracker" = "https://github.com/surquest/python-gcp-logger/issues"
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+"scripts" = "surquest"
+
+[tool.hatch.build.targets.sdist.sources]
+"src" = ""
+"scripts" = "surquest"
