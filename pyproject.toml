@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "surquest-GCP-logger"
-version = "0.0.1rc5"
+version = "0.0.1rc7"
 description = "Wrapper around Google Cloud Platform (GCP) logging library to simplify creation of traced logs."
 authors = [
     {name= "Michal Švarc", email= "michal.svarc@surquest.com"}
@@ -18,7 +18,7 @@ dependencies = [
 test = [
     "pytest>=7.2.1",
     "pytest-cov>=4.0.0",
-    "starlette ~= 0.20.0"
+    "starlette >= 0.24.0"
 ]
 
 
