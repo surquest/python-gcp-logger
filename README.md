@@ -13,8 +13,8 @@ request = None
 logger = Logger(request=request)
 logger.log(
     severity="INFO",
-    msg="This is a test message",       # log message
-    ctx={                               # context information
+    msg="This is a test message",           # log message
+    **{                                     # context information as KWARGS
         "key1": "value1",
         "key2": "value2"
     }

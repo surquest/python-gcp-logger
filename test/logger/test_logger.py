@@ -122,9 +122,11 @@ class TestLogger:
                 entry.get("severity")
             )
 
+    def test__warning(self):
+
         entry = self.LOGGER.warning(
             "This is a WARNING message",
-            ctx={
+            **{
                 "key": "value"
             }
         )
@@ -141,8 +143,35 @@ class TestLogger:
                 entry.get("severity")
             )
 
-        assert dict == type(entry.get("ctx")), \
+        assert dict == type(entry.get("context")), \
             self.ERRORS.get("type").format(
                 dict,
-                type(entry.get("ctx"))
+                type(entry.get("context"))
+            )
+
+    def test__error(self):
+
+        entry = self.LOGGER.error(
+            "This is a ERROR message",
+            ctx={
+                "key": "value"
+            }
+        )
+
+        assert type(entry) == dict, \
+            self.ERRORS.get("type").format(
+                dict,
+                type(entry)
+            )
+
+        assert "ERROR" == entry.get("severity"), \
+            self.ERRORS.get("value").format(
+                "ERROR",
+                entry.get("severity")
+            )
+
+        assert dict == type(entry.get("context")), \
+            self.ERRORS.get("type").format(
+                dict,
+                type(entry.get("context"))
             )

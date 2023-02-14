@@ -76,17 +76,17 @@ class Logger(object):
             print(json.dumps(entry, sort_keys=False, default=encoder))
             return entry
 
-    def __getattr__(self, method, msg=None, ctx=None):
+    def __getattr__(self, method, msg=None, **ctx):
 
         severity = self.get_log_level(level=method).get("name")
 
-        def temp_log(msg=None, ctx=None):
+        def temp_log(msg=None, **ctx):
 
             if ctx is None:
                 return self.log(severity=severity, msg=msg)
             else:
                 return self.log(
-                    severity=severity, msg=msg, ctx=ctx
+                    severity=severity, msg=msg, **ctx
                 )
 
         return temp_log
