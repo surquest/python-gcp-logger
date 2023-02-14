@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "surquest-GCP-logger"
-version = "0.0.1rc7"
+version = "0.1.0"
 description = "Wrapper around Google Cloud Platform (GCP) logging library to simplify creation of traced logs."
 authors = [
     {name= "Michal Švarc", email= "michal.svarc@surquest.com"}
 ]
 readme = "README.md"
 dependencies = [
-    "surquest-GCP-tracer ~= 0.0.1"
+    "surquest-GCP-tracer ~= 0.1.0"
 ]
 
 [project.optional-dependencies]
