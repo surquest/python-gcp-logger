@@ -2,6 +2,7 @@
 ![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/surquest/python-gcp-logger/test.yml?branch=main&style=flat-square)
 ![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/surquest/6e25c317000917840152a5e702e71963/raw/python-gcp-logger.json&style=flat-square)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/surquest-GCP-logger?style=flat-square)
+![PyPI](https://img.shields.io/pypi/v/surquest-GCP-logger)
 
 # Introduction
 
