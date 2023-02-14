@@ -24,7 +24,7 @@ request = Request(
 
 class TestLogger:
 
-    LOGGER = Logger(request=request)
+    LOGGER = Logger()
     ERRORS = {
         "value": "Wrong value: Expected: `{}`, Actual: `{}`",
         "type": "Wrong type: Expected: `{}`, Actual: `{}`"
